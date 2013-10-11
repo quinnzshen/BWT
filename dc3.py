@@ -44,8 +44,8 @@ def dc3(input):
     for x in c:
         b_dict[x] = a_dict[counter]
         counter += 1
+    b_dict[len(input)] = 0
     b_dict[len(input) + 1] = 0
-    b_dict[len(input) + 2] = 0
     print "b_dict"
     print b_dict
 
@@ -118,12 +118,12 @@ def to_integer_alphabet(string):
     character_mapping = {}
     for char in LEXICALGRAPHICAL_ALPHABET:
         if char in character_set:
-            character_mapping[char] = len(character_mapping) + 1
+            character_mapping[char] = len(character_mapping)
     return [character_mapping[i] for i in string]
 
 
 def main():
-    input_string = to_integer_alphabet("yabbadabbado")
+    input_string = to_integer_alphabet("yabbadabbado$")
     print input_string
     dc3(input_string)
 
